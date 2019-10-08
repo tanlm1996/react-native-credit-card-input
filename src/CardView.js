@@ -121,7 +121,7 @@ export default class CardView extends Component {
     const containerSize = { ...BASE_SIZE, height: BASE_SIZE.height * scale };
     const transform = { transform: [
       { scale },
-      { translateY: ((BASE_SIZE.height * (scale - 1) / 2)) },
+      { translateY: ((BASE_SIZE.height * (scale - 1) / 2))-8 },
     ] };
 
     return (
@@ -135,8 +135,10 @@ export default class CardView extends Component {
           flip={shouldFlip}>
           <ImageBackground style={[BASE_SIZE, s.cardFace, transform]}
             source={imageFront}>
+{/*
               <Image style={[s.icon]}
                 source={Icons[brand]} />
+*/}
               <Text style={[s.baseText, { fontFamily }, s.number, !number && s.placeholder, focused === "number" && s.focused]}>
                 { !number ? placeholder.number : number }
               </Text>
